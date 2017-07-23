@@ -18,7 +18,12 @@ public struct OnboardPage {
 	let advanceButtonTitle: String
 	let action: OnboardPageAction?
 	
-	public init(title: String, imageName: String?, description: String?, actionButtonTitle: String?, advanceButtonTitle: String, action: OnboardPageAction?) {
+	public init(title: String,
+	            imageName: String? = nil,
+	            description: String?,
+	            actionButtonTitle: String? = nil,
+	            advanceButtonTitle: String = NSLocalizedString("Next", comment: ""),
+	            action: OnboardPageAction? = nil) {
 		self.title = title
 		self.imageName = imageName
 		self.description = description

@@ -18,7 +18,6 @@
 		9437E2DC1F2392FD00E294BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9437E2DB1F2392FD00E294BE /* Assets.xcassets */; };
 		9437E2DF1F2392FD00E294BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9437E2DD1F2392FD00E294BE /* LaunchScreen.storyboard */; };
 		9437E2E41F23931200E294BE /* OnboardKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9437E2A51F238E7E00E294BE /* OnboardKit.framework */; };
-		9437E2E61F23933A00E294BE /* OnboardSlidesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9437E2E51F23933A00E294BE /* OnboardSlidesHelper.swift */; };
 		9449158B1F23D4D300191E79 /* OnboardKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 9449158A1F23D4D300191E79 /* OnboardKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -48,7 +47,6 @@
 		9437E2DB1F2392FD00E294BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9437E2DE1F2392FD00E294BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9437E2E01F2392FD00E294BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9437E2E51F23933A00E294BE /* OnboardSlidesHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardSlidesHelper.swift; sourceTree = "<group>"; };
 		9449158A1F23D4D300191E79 /* OnboardKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OnboardKit.h; path = /Users/nikolakirev/Workspace/OnboardKit/Metadata/OnboardKit.h; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -133,7 +131,6 @@
 			children = (
 				9437E2D41F2392FD00E294BE /* AppDelegate.swift */,
 				9437E2D61F2392FD00E294BE /* ViewController.swift */,
-				9437E2E51F23933A00E294BE /* OnboardSlidesHelper.swift */,
 				9437E2D81F2392FD00E294BE /* Main.storyboard */,
 				9437E2DB1F2392FD00E294BE /* Assets.xcassets */,
 				9437E2DD1F2392FD00E294BE /* LaunchScreen.storyboard */,
@@ -309,7 +306,6 @@
 			files = (
 				9437E2D71F2392FD00E294BE /* ViewController.swift in Sources */,
 				9437E2D51F2392FD00E294BE /* AppDelegate.swift in Sources */,
-				9437E2E61F23933A00E294BE /* OnboardSlidesHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
