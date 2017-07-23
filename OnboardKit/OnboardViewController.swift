@@ -102,7 +102,7 @@ extension OnboardViewController: UIPageViewControllerDelegate {
 
 extension OnboardViewController: OnboardPageViewControllerDelegate {
 
-	func slideViewControllerDidSelectActionButton(_ slideVC: OnboardPageViewController) {
+	func slideViewControllerDidSelectActionButton(slideVC: OnboardPageViewController) {
 		let slideIndex = slideVC.slideIndex
 		if let slideAction = slideItems[slideIndex].action {
 			slideAction({ (success, error) in
@@ -114,7 +114,7 @@ extension OnboardViewController: OnboardPageViewControllerDelegate {
 		}
 	}
 
-	func slideViewControllerDidSelectAdvanceButton(_ slideVC: OnboardPageViewController) {
+	func slideViewControllerDidSelectAdvanceButton(slideVC: OnboardPageViewController) {
 		let slideIndex = slideVC.slideIndex
 		if slideIndex == slideItems.count-1 {
 			dismiss(animated: true, completion: nil)

@@ -9,9 +9,9 @@ import UIKit
 
 protocol OnboardPageViewControllerDelegate: class {
 
-	func slideViewControllerDidSelectActionButton(_ slideVC: OnboardPageViewController)
+	func slideViewControllerDidSelectActionButton(slideVC: OnboardPageViewController)
 
-	func slideViewControllerDidSelectAdvanceButton(_ slideVC: OnboardPageViewController)
+	func slideViewControllerDidSelectAdvanceButton(slideVC: OnboardPageViewController)
 }
 
 final class OnboardPageViewController: UIViewController {
@@ -43,11 +43,18 @@ final class OnboardPageViewController: UIViewController {
 	}()
 	
 	private lazy var slideActionButton: UIButton = {
-		return UIButton()
+		let button = UIButton()
+		button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .title2)
+		button.tintColor = UIColor.blue
+		button.backgroundColor = UIColor.blue
+		return button
 	}()
 	
 	private lazy var slideAdvanceButton: UIButton = {
-		return UIButton()
+		let button = UIButton()
+		button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .body)
+		button.setTitleColor(UIColor.blue, for: .normal)
+		return button
 	}()
 
 	var slideIndex: Int
@@ -74,17 +81,14 @@ final class OnboardPageViewController: UIViewController {
 		slideStackView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
 		
 		slideStackView.addArrangedSubview(slideTitleLabel)
+		slideStackView.addArrangedSubview(slideImageView)
 		slideStackView.addArrangedSubview(slideDescriptionLabel)
+		slideStackView.addArrangedSubview(slideActionButton)
+		slideStackView.addArrangedSubview(slideAdvanceButton)
 
-		slideActionButton.titleLabel?.font = UIFont.preferredFont(forTextStyle: .title2)
-		slideActionButton.tintColor = UIColor.blue
-		slideActionButton.backgroundColor = UIColor.blue
 		slideActionButton.addTarget(self,
 		                            action: #selector(OnboardPageViewController.actionTapped),
 		                            for: .touchUpInside)
-
-		slideAdvanceButton.titleLabel?.font = UIFont.preferredFont(forTextStyle: .body)
-		slideAdvanceButton.setTitleColor(UIColor.blue, for: .normal)
 		slideAdvanceButton.addTarget(self,
 		                            action: #selector(OnboardPageViewController.advanceTapped),
 		                            for: .touchUpInside)
@@ -111,10 +115,10 @@ final class OnboardPageViewController: UIViewController {
 	}
 
 	@objc fileprivate func actionTapped() {
-		delegate?.slideViewControllerDidSelectActionButton(self)
+		delegate?.slideViewControllerDidSelectActionButton(slideVC: self)
 	}
 
 	@objc fileprivate func advanceTapped() {
-		delegate?.slideViewControllerDidSelectAdvanceButton(self)
+		delegate?.slideViewControllerDidSelectAdvanceButton(slideVC: self)
 	}
 }
