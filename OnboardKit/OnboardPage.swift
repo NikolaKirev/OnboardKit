@@ -11,24 +11,32 @@ public typealias OnboardPageCompletion = ((_ success: Bool, _ error: Error?) -> 
 public typealias OnboardPageAction = (@escaping OnboardPageCompletion) -> Void
 
 public struct OnboardPage {
-	let title: String
-	let imageName: String?
-	let description: String?
-	let actionButtonTitle: String?
-	let advanceButtonTitle: String
-	let action: OnboardPageAction?
-	
-	public init(title: String,
-	            imageName: String? = nil,
-	            description: String?,
-	            actionButtonTitle: String? = nil,
-	            advanceButtonTitle: String = NSLocalizedString("Next", comment: ""),
-	            action: OnboardPageAction? = nil) {
-		self.title = title
-		self.imageName = imageName
-		self.description = description
-		self.actionButtonTitle = actionButtonTitle
-		self.advanceButtonTitle = advanceButtonTitle
-		self.action = action
-	}
+  let title: String
+  let imageName: String?
+  let description: String?
+  let actionButtonTitle: String?
+  let advanceButtonTitle: String
+  let action: OnboardPageAction?
+  
+  public init(title: String,
+              imageName: String? = nil,
+              description: String?,
+              actionButtonTitle: String? = nil,
+              advanceButtonTitle: String = NSLocalizedString("Next", comment: ""),
+              action: OnboardPageAction? = nil) {
+    self.title = title
+    self.imageName = imageName
+    self.description = description
+    self.actionButtonTitle = actionButtonTitle
+    self.advanceButtonTitle = advanceButtonTitle
+    self.action = action
+  }
+}
+
+extension OnboardPage {
+  public struct AppearanceConfiguration {
+    //tint color
+    //background image
+    //background color
+  }
 }
