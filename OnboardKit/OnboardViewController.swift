@@ -14,22 +14,26 @@ final public class OnboardViewController: UIViewController {
                                                             options: nil)
   fileprivate var slideItems: [OnboardPage]
   
+  private let appearanceConfiguration: AppearanceConfiguration
+  
   required public init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
   
-  public init(slideItems: [OnboardPage]) {
+  public init(slideItems: [OnboardPage],
+              appearanceConfiguration: AppearanceConfiguration = AppearanceConfiguration()) {
     self.slideItems = slideItems
+    self.appearanceConfiguration = appearanceConfiguration
     super.init(nibName: nil, bundle: nil)
   }
-  
+
   override public var supportedInterfaceOrientations: UIInterfaceOrientationMask {
     return .portrait
   }
-  
+
   override public func loadView() {
     super.loadView()
-    view.backgroundColor = UIColor.white
+    view.backgroundColor = appearanceConfiguration.backgroundColor
     pageViewController.setViewControllers([slideViwControllerFor(slideIndex: 0)!],
                                           direction: .forward,
                                           animated: false,
@@ -39,8 +43,8 @@ final public class OnboardViewController: UIViewController {
     pageViewController.view.frame = view.bounds
     
     let pageControlApperance = UIPageControl.appearance(whenContainedInInstancesOf: [OnboardViewController.self])
-    pageControlApperance.pageIndicatorTintColor = .lightGray
-    pageControlApperance.currentPageIndicatorTintColor = UIColor.blue
+    pageControlApperance.pageIndicatorTintColor = appearanceConfiguration.tintColor.withAlphaComponent(0.3)
+    pageControlApperance.currentPageIndicatorTintColor = appearanceConfiguration.tintColor
     
     addChildViewController(pageViewController)
     view.addSubview(pageViewController.view)
@@ -48,7 +52,7 @@ final public class OnboardViewController: UIViewController {
   }
   
   fileprivate func slideViwControllerFor(slideIndex: Int) -> OnboardPageViewController? {
-    let slideVC = OnboardPageViewController(slideIndex: slideIndex)
+    let slideVC = OnboardPageViewController(slideIndex: slideIndex, appearanceConfiguration: appearanceConfiguration)
     guard slideIndex >= 0 else { return nil }
     guard slideIndex < slideItems.count else { return nil }
     slideVC.delegate = self
@@ -64,6 +68,14 @@ final public class OnboardViewController: UIViewController {
                                                   animated: true,
                                                   completion: nil)
     }
+  }
+}
+
+// MARK: Presenting
+public extension OnboardViewController {
+
+  public func presentFrom(_ viewController: UIViewController, animated: Bool) {
+    viewController.present(self, animated: animated)
   }
 }
 
@@ -101,7 +113,7 @@ extension OnboardViewController: UIPageViewControllerDelegate {
 }
 
 extension OnboardViewController: OnboardPageViewControllerDelegate {
-  
+
   func slideViewControllerDidSelectActionButton(slideVC: OnboardPageViewController) {
     let slideIndex = slideVC.slideIndex
     if let slideAction = slideItems[slideIndex].action {
@@ -113,7 +125,7 @@ extension OnboardViewController: OnboardPageViewControllerDelegate {
       })
     }
   }
-  
+
   func slideViewControllerDidSelectAdvanceButton(slideVC: OnboardPageViewController) {
     let slideIndex = slideVC.slideIndex
     if slideIndex == slideItems.count-1 {
@@ -123,3 +135,27 @@ extension OnboardViewController: OnboardPageViewControllerDelegate {
     }
   }
 }
+
+extension OnboardViewController {
+  public struct AppearanceConfiguration {
+    let tintColor: UIColor
+    let textColor: UIColor
+    let backgroundColor: UIColor
+    
+    let titleFont: UIFont
+    let textFont: UIFont
+    
+    public init(tintColor: UIColor = UIColor(red: 0.0, green: 122.0/255.0, blue: 1.0, alpha: 1.0),
+                textColor: UIColor = .black,
+                backgroundColor: UIColor = .white,
+                titleFont: UIFont = UIFont.preferredFont(forTextStyle: .title1),
+                textFont: UIFont = UIFont.preferredFont(forTextStyle: .body)) {
+      self.tintColor = tintColor
+      self.textColor = textColor
+      self.backgroundColor = backgroundColor
+      self.titleFont = titleFont
+      self.textFont = textFont
+    }
+  }
+}
+

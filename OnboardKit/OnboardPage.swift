@@ -32,11 +32,3 @@ public struct OnboardPage {
     self.action = action
   }
 }
-
-extension OnboardPage {
-  public struct AppearanceConfiguration {
-    //tint color
-    //background image
-    //background color
-  }
-}

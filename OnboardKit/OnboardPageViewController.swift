@@ -55,7 +55,6 @@ final class OnboardPageViewController: UIViewController {
     let button = UIButton()
     button.translatesAutoresizingMaskIntoConstraints = false
     button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .title2)
-    button.setTitleColor(UIColor.blue, for: .normal)
     return button
   }()
   
@@ -63,7 +62,6 @@ final class OnboardPageViewController: UIViewController {
     let button = UIButton()
     button.translatesAutoresizingMaskIntoConstraints = false
     button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .body)
-    button.setTitleColor(UIColor.blue, for: .normal)
     return button
   }()
   
@@ -71,7 +69,7 @@ final class OnboardPageViewController: UIViewController {
   
   weak var delegate: OnboardPageViewControllerDelegate?
   
-  init(slideIndex: Int, appearanceConfiguration: OnboardPage.AppearanceConfiguration? = nil) {
+  init(slideIndex: Int, appearanceConfiguration: OnboardViewController.AppearanceConfiguration) {
     self.slideIndex = slideIndex
     super.init(nibName: nil, bundle: nil)
     customizeStyleWith(appearanceConfiguration)
@@ -82,8 +80,19 @@ final class OnboardPageViewController: UIViewController {
     fatalError("init(coder:) has not been implemented")
   }
   
-  private func customizeStyleWith(_ appearanceConfiguration: OnboardPage.AppearanceConfiguration?) {
-    view.backgroundColor = .white
+  private func customizeStyleWith(_ appearanceConfiguration: OnboardViewController.AppearanceConfiguration) {
+    view.backgroundColor = appearanceConfiguration.backgroundColor
+    //Style title
+    slideTitleLabel.textColor = appearanceConfiguration.textColor
+    slideTitleLabel.font = appearanceConfiguration.titleFont
+    //Style description
+    slideDescriptionLabel.textColor = appearanceConfiguration.textColor
+    slideDescriptionLabel.font = appearanceConfiguration.textFont
+    //Style buttons
+    slideActionButton.setTitleColor(appearanceConfiguration.tintColor, for: .normal)
+    slideActionButton.titleLabel?.font = appearanceConfiguration.titleFont
+    slideAdvanceButton.setTitleColor(appearanceConfiguration.tintColor, for: .normal)
+    slideAdvanceButton.titleLabel?.font = appearanceConfiguration.textFont
   }
   
   private func customizeForDebug() {
