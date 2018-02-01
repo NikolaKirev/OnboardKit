@@ -17,7 +17,8 @@
 		9437E2DA1F2392FD00E294BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9437E2D81F2392FD00E294BE /* Main.storyboard */; };
 		9437E2DC1F2392FD00E294BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9437E2DB1F2392FD00E294BE /* Assets.xcassets */; };
 		9437E2DF1F2392FD00E294BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9437E2DD1F2392FD00E294BE /* LaunchScreen.storyboard */; };
-		9437E2E41F23931200E294BE /* OnboardKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9437E2A51F238E7E00E294BE /* OnboardKit.framework */; };
+		9448EA1B2023AA0B00EDDAAB /* OnboardKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9437E2A51F238E7E00E294BE /* OnboardKit.framework */; };
+		9448EA1C2023AA0B00EDDAAB /* OnboardKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9437E2A51F238E7E00E294BE /* OnboardKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9449158B1F23D4D300191E79 /* OnboardKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 9449158A1F23D4D300191E79 /* OnboardKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -29,7 +30,28 @@
 			remoteGlobalIDString = 9437E2A41F238E7E00E294BE;
 			remoteInfo = OnboardKit;
 		};
+		9448EA1D2023AA0B00EDDAAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9437E29C1F238E7E00E294BE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9437E2A41F238E7E00E294BE;
+			remoteInfo = OnboardKit;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9448EA1F2023AA0B00EDDAAB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9448EA1C2023AA0B00EDDAAB /* OnboardKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		9437E2A51F238E7E00E294BE /* OnboardKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OnboardKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,7 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9437E2E41F23931200E294BE /* OnboardKit.framework in Frameworks */,
+				9448EA1B2023AA0B00EDDAAB /* OnboardKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,6 +183,7 @@
 				9437E2A11F238E7E00E294BE /* Frameworks */,
 				9437E2A21F238E7E00E294BE /* Headers */,
 				9437E2A31F238E7E00E294BE /* Resources */,
+				94938724201F1F2400EF9415 /* Swift Lint */,
 			);
 			buildRules = (
 			);
@@ -196,10 +219,12 @@
 				9437E2CE1F2392FC00E294BE /* Sources */,
 				9437E2CF1F2392FC00E294BE /* Frameworks */,
 				9437E2D01F2392FC00E294BE /* Resources */,
+				9448EA1F2023AA0B00EDDAAB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				9448EA1E2023AA0B00EDDAAB /* PBXTargetDependency */,
 			);
 			name = OnboardExample;
 			productName = OnboardExample;
@@ -229,9 +254,8 @@
 					};
 					9437E2D11F2392FC00E294BE = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 5Z8M29P3V9;
 						LastSwiftMigration = 0920;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -282,6 +306,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		94938724201F1F2400EF9415 /* Swift Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Lint";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9437E2A01F238E7E00E294BE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -317,6 +358,11 @@
 			isa = PBXTargetDependency;
 			target = 9437E2A41F238E7E00E294BE /* OnboardKit */;
 			targetProxy = 9437E2B01F238E7E00E294BE /* PBXContainerItemProxy */;
+		};
+		9448EA1E2023AA0B00EDDAAB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9437E2A41F238E7E00E294BE /* OnboardKit */;
+			targetProxy = 9448EA1D2023AA0B00EDDAAB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -471,7 +517,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -493,7 +539,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.nikolakirev.OnboardKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
@@ -527,13 +573,17 @@
 		9437E2E21F2392FD00E294BE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 5Z8M29P3V9;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = OnboardExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nikolakirev.OnboardExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -541,13 +591,17 @@
 		9437E2E31F2392FD00E294BE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 5Z8M29P3V9;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = OnboardExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nikolakirev.OnboardExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
