@@ -7,7 +7,7 @@
 
 *Customisable user onboarding for your iOS app in Swift*
 
-<p align="center"><img src="https://github.com/NikolaKirev/OnboardKit/develop/Assets/demo.gif" /></p>
+<p align="center"><img src="https://media.giphy.com/media/3ohjV8gDG3kE5dbWSI/giphy.gif" /></p>
 
 ## Requirements
 
@@ -21,6 +21,18 @@
 
 ````bash
 github "NikolaKirev/OnboardKit"
+````
+
+#### [CocoaPods](http://cocoapods.org)
+
+````ruby
+use_frameworks!
+
+# Latest release in CocoaPods
+pod 'OnboardKit'
+
+# Get the latest on master
+pod 'OnboardKit', :git => 'https://github.com/NikolaKirev/OnboardKit.git', :branch => 'master'
 ````
 
 Don't forget to `import OnboardKit` in the file you intend to use it.
