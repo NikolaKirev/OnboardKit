@@ -23,6 +23,12 @@
 github "NikolaKirev/OnboardKit"
 ````
 
+#### [CocoaPods](http://cocoapods.org)
+
+````ruby
+pod 'OnboardKit'
+````
+
 Don't forget to `import OnboardKit` in the file you intend to use it.
 
 ## Usage
