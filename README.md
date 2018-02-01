@@ -7,7 +7,7 @@
 
 *Customisable user onboarding for your iOS app in Swift*
 
-<p align="center"><img src="https://raw.githubusercontent.com/NikolaKirev/OnboardKit/develop/Assets/demo.gif" /></p>
+<p align="center"><img src="https://github.com/NikolaKirev/OnboardKit/develop/Assets/demo.gif" /></p>
 
 ## Requirements
 
@@ -27,12 +27,32 @@ Don't forget to `import OnboardKit` in the file you intend to use it.
 
 ## Usage
 
-#### Step 1 - Create `OnboardPage`s
-
+1. Create and populate a bunch of `OnboardPage` instances
 ````swift
+let page = OnboardPage(title: "Welcome to OnboardKit",
+                       imageName: "Onboarding1",
+                       description: "OnboardKit helps you add onboarding to your iOS app")
 ````
+2. Create an `OnboardViewController`
+````swift
+let onboardingViewController = OnboardViewController(pageItems: [pageOne, ...]])
+````
+3. Present the view controller
+````swift
+onboardingVC.presentFrom(self, animated: true)
+````
+(use this convenience method to make sure you predent it modally)
 
 ## Customizatioon
+
+You can customize the look of your onboarding by changing the default colors.
+````swift
+AppearanceConfiguration(tintColor: .green,
+                        textColor: .white,
+                        backgroundColor: .black,
+                        titleFont: UIFont.boldSystemFont(ofSize: 24),
+                        textFont: UIFont.boldSystemFont(ofSize: 13))
+````
 
 ## Author
 
