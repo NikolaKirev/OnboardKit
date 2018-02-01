@@ -7,7 +7,7 @@
 
 *Customisable user onboarding for your iOS app in Swift*
 
-<p align="center"><img src="https://github.com/NikolaKirev/OnboardKit/develop/Assets/demo.gif" /></p>
+<p align="center"><img src="https://media.giphy.com/media/3ohjV8gDG3kE5dbWSI/giphy.gif" /></p>
 
 ## Requirements
 
