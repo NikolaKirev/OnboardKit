@@ -26,7 +26,13 @@ github "NikolaKirev/OnboardKit"
 #### [CocoaPods](http://cocoapods.org)
 
 ````ruby
+use_frameworks!
+
+# Latest release in CocoaPods
 pod 'OnboardKit'
+
+# Get the latest on master
+pod 'OnboardKit', :git => 'https://github.com/NikolaKirev/OnboardKit.git', :branch => 'master'
 ````
 
 Don't forget to `import OnboardKit` in the file you intend to use it.
