@@ -7,6 +7,8 @@
 
 *Customisable user onboarding for your iOS app in Swift*
 
+<p align="center"><img src="https://raw.githubusercontent.com/NikolaKirev/OnboardKit/develop/Assets/demo.gif" /></p>
+
 ## Requirements
 
 * Swift 4.0
@@ -24,6 +26,11 @@ github "NikolaKirev/OnboardKit"
 Don't forget to `import OnboardKit` in the file you intend to use it.
 
 ## Usage
+
+#### Step 1 - Create `OnboardPage`s
+
+````swift
+````
 
 ## Customizatioon
 
