@@ -184,7 +184,7 @@ internal final class OnboardPageViewController: UIViewController {
     advanceButton.setTitle(title, for: .normal)
   }
 
-  // MARK - User Actions
+  // MARK: - User Actions
   @objc fileprivate func actionTapped() {
     delegate?.pageViewController(self, actionTappedAt: pageIndex)
   }
