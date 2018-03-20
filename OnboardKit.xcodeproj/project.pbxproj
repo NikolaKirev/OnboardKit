@@ -69,7 +69,7 @@
 		9437E2DB1F2392FD00E294BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9437E2DE1F2392FD00E294BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9437E2E01F2392FD00E294BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9449158A1F23D4D300191E79 /* OnboardKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OnboardKit.h; path = /Users/nikolakirev/Workspace/OnboardKit/Metadata/OnboardKit.h; sourceTree = "<absolute>"; };
+		9449158A1F23D4D300191E79 /* OnboardKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OnboardKit.h; path = OnboardKit.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
