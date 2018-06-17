@@ -15,13 +15,11 @@ class ViewController: UIViewController {
 
     let pageTwo = OnboardPage(title: "Habit Entries",
                               imageName: "Onboarding2",
-                              // swiftlint:disable:next line_length
-                              description: "For each of your habits an entry is created for every day you need to complete it.")
+      description: "For each of your habits an entry is created for every day you need to complete it.")
 
     let pageThree = OnboardPage(title: "Marking and Tracking",
                                 imageName: "Onboarding3",
-                                // swiftlint:disable:next line_length
-                                description: "By marking entries as Done you can track your progress on the path to success.")
+      description: "By marking entries as Done you can track your progress on the path to success.")
 
     let pageFour = OnboardPage(title: "Notifications",
                                imageName: "Onboarding4",
@@ -34,9 +32,8 @@ class ViewController: UIViewController {
 
     let pageFive = OnboardPage(title: "All Ready",
                                imageName: "Onboarding5",
-                               // swiftlint:disable:next line_length
-                               description: "You are all set up and ready to use Habitat. Begin by adding your first habit.",
-                               advanceButtonTitle: "Done")
+      description: "You are all set up and ready to use Habitat. Begin by adding your first habit.",
+      advanceButtonTitle: "Done")
 
     return [pageOne, pageTwo, pageThree, pageFour, pageFive]
   }()

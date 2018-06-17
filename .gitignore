@@ -2,3 +2,5 @@
 *.xcuserstate
 *.xcuserdata
 .DS_Store
+xcuserdata
+xcshareddata
