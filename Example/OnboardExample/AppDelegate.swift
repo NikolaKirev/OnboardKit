@@ -2,8 +2,6 @@
 //  AppDelegate.swift
 //  OnboardExample
 //
-//  Created by Nikola Kirev on 22/07/2017.
-//
 
 import UIKit
 
