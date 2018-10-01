@@ -1,7 +1,7 @@
 ![OnboardKit](Assets/banner.png)
 
 # OnboardKit
-[![Swift 4.0](https://img.shields.io/badge/Swift-4.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
+[![Swift 4.0](https://img.shields.io/badge/Swift-4.2-orange.svg?style=flat)](https://developer.apple.com/swift/)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Twitter](https://img.shields.io/badge/twitter-@NikolaKirev-blue.svg?style=flat)](https://twitter.com/NikolaKirev)
 
@@ -11,8 +11,8 @@
 
 ## Requirements
 
-* Swift 4.0
-* Xcode 9
+* Swift 4.2
+* Xcode 10
 * iOS 10.0+
 
 ## Installation
