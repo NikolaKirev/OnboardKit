@@ -45,9 +45,9 @@ final public class OnboardViewController: UIViewController {
     pageControlApperance.pageIndicatorTintColor = appearanceConfiguration.tintColor.withAlphaComponent(0.3)
     pageControlApperance.currentPageIndicatorTintColor = appearanceConfiguration.tintColor
 
-    addChildViewController(pageViewController)
+    addChild(pageViewController)
     view.addSubview(pageViewController.view)
-    pageViewController.didMove(toParentViewController: self)
+    pageViewController.didMove(toParent: self)
   }
 
   private func pageViwControllerFor(pageIndex: Int) -> OnboardPageViewController? {
