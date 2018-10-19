@@ -19,6 +19,12 @@ final public class OnboardViewController: UIViewController {
     fatalError("init(coder:) has not been implemented")
   }
 
+  /// Initializes a new `OnboardViewController` to be presented
+  /// The onboard view controller encapsulates the whole onboarding flow
+  ///
+  /// - Parameters:
+  ///   - pageItems: An array of `OnboardPage` items
+  ///   - appearanceConfiguration: An optional configuration struct for appearance customization
   public init(pageItems: [OnboardPage],
               appearanceConfiguration: AppearanceConfiguration = AppearanceConfiguration()) {
     self.pageItems = pageItems
@@ -74,6 +80,10 @@ final public class OnboardViewController: UIViewController {
 public extension OnboardViewController {
 
   /// Presents the configured `OnboardViewController`
+  ///
+  /// - Parameters:
+  ///   - viewController: the presenting view controller
+  ///   - animated: Defines if the presentation should be animated
   public func presentFrom(_ viewController: UIViewController, animated: Bool) {
     viewController.present(self, animated: animated)
   }

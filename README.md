@@ -70,11 +70,11 @@ AppearanceConfiguration(tintColor: .green,
 
 ## Author
 
-###Nikola Kirev
+### Nikola Kirev
 
 * Website: [http://nikolakirev.com](http://nikolakirev.com)
 * Twitter: [@NikolaKirev](http://twitter.com/nikolakirev)
 
 ## License
 
-OnboardKit is available under the MIT license. See the LICENSE file for more info.
+OnboardKit is available under the MIT license. See the [LICENSE](https://github.com/NikolaKirev/OnboardKit/blob/master/LICENSE) file for more info.

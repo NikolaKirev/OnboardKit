@@ -7,10 +7,18 @@ import UIKit
 
 internal protocol OnboardPageViewControllerDelegate: class {
 
+  /// Informs the `delegate` that the action button was tapped
   ///
+  /// - Parameters:
+  ///   - pageVC: The `OnboardPageViewController` object
+  ///   - index: The page index
   func pageViewController(_ pageVC: OnboardPageViewController, actionTappedAt index: Int)
 
+  /// Informs the `delegate` that the advance(next) button was tapped
   ///
+  /// - Parameters:
+  ///   - pageVC: The `OnboardPageViewController` object
+  ///   - index: The page index
   func pageViewController(_ pageVC: OnboardPageViewController, advanceTappedAt index: Int)
 }
 
@@ -79,13 +87,13 @@ internal final class OnboardPageViewController: UIViewController {
 
   private func customizeStyleWith(_ appearanceConfiguration: OnboardViewController.AppearanceConfiguration) {
     view.backgroundColor = appearanceConfiguration.backgroundColor
-    //Style title
+    // Style title
     titleLabel.textColor = appearanceConfiguration.titleColor
     titleLabel.font = appearanceConfiguration.titleFont
-    //Style description
+    // Style description
     descriptionLabel.textColor = appearanceConfiguration.textColor
     descriptionLabel.font = appearanceConfiguration.textFont
-    //Style buttons
+    // Style buttons
     actionButton.setTitleColor(appearanceConfiguration.tintColor, for: .normal)
     actionButton.titleLabel?.font = appearanceConfiguration.titleFont
     advanceButton.setTitleColor(appearanceConfiguration.tintColor, for: .normal)
