@@ -13,7 +13,7 @@
 
 * Swift 4.2
 * Xcode 10
-* iOS 10.0+
+* iOS 11.0+
 
 ## Installation
 
@@ -53,7 +53,7 @@ let onboardingViewController = OnboardViewController(pageItems: [pageOne, ...]])
 ````swift
 onboardingVC.presentFrom(self, animated: true)
 ````
-(use this convenience method to make sure you predent it modally)
+(use this convenience method to make sure you present it modally)
 
 ## Customizatioon
 
