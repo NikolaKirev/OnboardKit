@@ -71,7 +71,6 @@ internal final class OnboardPageViewController: UIViewController {
     self.pageIndex = pageIndex
     super.init(nibName: nil, bundle: nil)
     customizeStyleWith(appearanceConfiguration)
-//    customizeForDebug()
   }
 
   required init?(coder aDecoder: NSCoder) {
@@ -81,7 +80,7 @@ internal final class OnboardPageViewController: UIViewController {
   private func customizeStyleWith(_ appearanceConfiguration: OnboardViewController.AppearanceConfiguration) {
     view.backgroundColor = appearanceConfiguration.backgroundColor
     //Style title
-    titleLabel.textColor = appearanceConfiguration.textColor
+    titleLabel.textColor = appearanceConfiguration.titleColor
     titleLabel.font = appearanceConfiguration.titleFont
     //Style description
     descriptionLabel.textColor = appearanceConfiguration.textColor
@@ -93,50 +92,29 @@ internal final class OnboardPageViewController: UIViewController {
     advanceButton.titleLabel?.font = appearanceConfiguration.textFont
   }
 
-  private func customizeForDebug() {
-    view.backgroundColor = .green
-    pageStackView.backgroundColor = .yellow
-    imageView.backgroundColor = .purple
-    descriptionLabel.backgroundColor = .orange
-    actionButton.backgroundColor = .cyan
-    advanceButton.backgroundColor = .brown
-  }
-
   override func loadView() {
-    super.loadView()
+    view = UIView(frame: CGRect.zero)
     view.addSubview(titleLabel)
     view.addSubview(pageStackView)
     NSLayoutConstraint.activate([
       titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-      pageStackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16.0)
+      titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16.0),
+      pageStackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16.0),
+      pageStackView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
+      pageStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+      pageStackView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor)
       ])
-    if #available(iOS 11.0, *) {
-      NSLayoutConstraint.activate([
-        titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16.0),
-        pageStackView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
-        pageStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-        pageStackView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor)
-        ])
-    } else {
-      // Fallback on earlier versions
-      NSLayoutConstraint.activate([
-        titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 16.0),
-        pageStackView.rightAnchor.constraint(equalTo: view.rightAnchor),
-        pageStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-        pageStackView.leftAnchor.constraint(equalTo: view.leftAnchor)
-      ])
-    }
     pageStackView.addArrangedSubview(imageView)
     pageStackView.addArrangedSubview(descriptionLabel)
     pageStackView.addArrangedSubview(actionButton)
     pageStackView.addArrangedSubview(advanceButton)
 
     actionButton.addTarget(self,
-                                action: #selector(OnboardPageViewController.actionTapped),
-                                for: .touchUpInside)
+                           action: #selector(OnboardPageViewController.actionTapped),
+                           for: .touchUpInside)
     advanceButton.addTarget(self,
-                                 action: #selector(OnboardPageViewController.advanceTapped),
-                                 for: .touchUpInside)
+                            action: #selector(OnboardPageViewController.advanceTapped),
+                            for: .touchUpInside)
   }
 
   func configureWithPage(_ page: OnboardPage) {
