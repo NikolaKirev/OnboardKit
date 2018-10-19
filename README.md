@@ -1,13 +1,13 @@
 ![OnboardKit](Assets/banner.png)
 
-# OnboardKit
 [![Swift 4.2](https://img.shields.io/badge/Swift-4.2-orange.svg?style=flat)](https://developer.apple.com/swift/)
 [![Version](https://img.shields.io/cocoapods/v/OnboardKit.svg?style=flat)](http://cocoapods.org/pods/OnboardKit)
 [![License](https://img.shields.io/cocoapods/l/OnboardKit.svg?style=flat)](http://cocoapods.org/pods/OnboardKit)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Twitter](https://img.shields.io/badge/twitter-@NikolaKirev-blue.svg?style=flat)](https://twitter.com/NikolaKirev)
 
-*Customisable user onboarding for your iOS app in Swift*
+# OnboardKit
+*Customisable user onboarding for your UIKit app in Swift*
 
 <p align="center"><img src="https://media.giphy.com/media/3ohjV8gDG3kE5dbWSI/giphy.gif" /></p>
 
@@ -70,9 +70,10 @@ AppearanceConfiguration(tintColor: .green,
 
 ## Author
 
-[Nikola Kirev](http://nikolakirev.com)
+###Nikola Kirev
 
-[@NikolaKirev](http://twitter.com/nikolakirev)
+* Website: [http://nikolakirev.com](http://nikolakirev.com)
+* Twitter: [@NikolaKirev](http://twitter.com/nikolakirev)
 
 ## License
 
