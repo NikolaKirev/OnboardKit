@@ -38,8 +38,25 @@ class ViewController: UIViewController {
     return [pageOne, pageTwo, pageThree, pageFour, pageFive]
   }()
 
-  @IBAction func showOnboardingTapped(_ sender: Any) {
+  @IBAction func showOnboardingDefaultTapped(_ sender: Any) {
     let onboardingVC = OnboardViewController(pageItems: onboardingPages)
+    onboardingVC.modalPresentationStyle = .formSheet
+    onboardingVC.presentFrom(self, animated: true)
+  }
+
+  @IBAction func showOnboardingCustomTapped(_ sender: Any) {
+    let tintColor = UIColor(red: 1.00, green: 0.52, blue: 0.40, alpha: 1.00)
+    let titleColor = UIColor(red: 1.00, green: 0.35, blue: 0.43, alpha: 1.00)
+    let boldTitleFont = UIFont.systemFont(ofSize: 32.0, weight: .bold)
+    let mediumTextFont = UIFont.systemFont(ofSize: 17.0, weight: .semibold)
+    let appearanceConfiguration = OnboardViewController.AppearanceConfiguration(tintColor: tintColor,
+                                                                                titleColor: titleColor,
+                                                                                textColor: .white,
+                                                                                backgroundColor: .black,
+                                                                                titleFont: boldTitleFont,
+                                                                                textFont: mediumTextFont)
+    let onboardingVC = OnboardViewController(pageItems: onboardingPages,
+                                             appearanceConfiguration: appearanceConfiguration)
     onboardingVC.modalPresentationStyle = .formSheet
     onboardingVC.presentFrom(self, animated: true)
   }
