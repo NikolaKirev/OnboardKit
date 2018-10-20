@@ -59,13 +59,16 @@ onboardingVC.presentFrom(self, animated: true)
 
 ## Customizatioon
 
+![Custom examples](Assets/custom_examples.png)
+
 You can customize the look of your onboarding by changing the default colors.
 ````swift
-AppearanceConfiguration(tintColor: .green,
+AppearanceConfiguration(tintColor: .orange,
+                        titleColor: .red,
                         textColor: .white,
                         backgroundColor: .black,
-                        titleFont: UIFont.boldSystemFont(ofSize: 24),
-                        textFont: UIFont.boldSystemFont(ofSize: 13))
+                        titleFont: UIFont.boldSystemFont(ofSize: 32.0),
+                        textFont: UIFont.boldSystemFont(ofSize: 17.0))
 ````
 
 ## Author
