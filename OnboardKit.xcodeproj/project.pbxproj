@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		9437E2AF1F238E7E00E294BE /* OnboardKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9437E2A51F238E7E00E294BE /* OnboardKit.framework */; };
-		9437E2B41F238E7E00E294BE /* OnboardKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9437E2B31F238E7E00E294BE /* OnboardKitTests.swift */; };
 		9437E2C91F23920800E294BE /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9437E2C41F23920800E294BE /* OnboardViewController.swift */; };
 		9437E2CB1F23920800E294BE /* OnboardPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9437E2C61F23920800E294BE /* OnboardPageViewController.swift */; };
 		9437E2CC1F23920800E294BE /* OnboardPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9437E2C71F23920800E294BE /* OnboardPage.swift */; };
 		9449158B1F23D4D300191E79 /* OnboardKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 9449158A1F23D4D300191E79 /* OnboardKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		94FF39BE217B237C005AA773 /* AppearanceConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FF39BD217B237C005AA773 /* AppearanceConfigurationTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,13 +28,13 @@
 /* Begin PBXFileReference section */
 		9437E2A51F238E7E00E294BE /* OnboardKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OnboardKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9437E2AE1F238E7E00E294BE /* OnboardKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnboardKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9437E2B31F238E7E00E294BE /* OnboardKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardKitTests.swift; sourceTree = "<group>"; };
 		9437E2B51F238E7E00E294BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9437E2C11F2391F700E294BE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9437E2C41F23920800E294BE /* OnboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardViewController.swift; sourceTree = "<group>"; };
 		9437E2C61F23920800E294BE /* OnboardPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardPageViewController.swift; sourceTree = "<group>"; };
 		9437E2C71F23920800E294BE /* OnboardPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardPage.swift; sourceTree = "<group>"; };
 		9449158A1F23D4D300191E79 /* OnboardKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnboardKit.h; sourceTree = "<group>"; };
+		94FF39BD217B237C005AA773 /* AppearanceConfigurationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceConfigurationTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +88,7 @@
 		9437E2B21F238E7E00E294BE /* OnboardKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				9437E2B31F238E7E00E294BE /* OnboardKitTests.swift */,
+				94FF39BD217B237C005AA773 /* AppearanceConfigurationTests.swift */,
 				9437E2B51F238E7E00E294BE /* Info.plist */,
 			);
 			path = OnboardKitTests;
@@ -246,7 +246,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9437E2B41F238E7E00E294BE /* OnboardKitTests.swift in Sources */,
+				94FF39BE217B237C005AA773 /* AppearanceConfigurationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,7 +311,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -367,7 +367,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -390,7 +390,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "$(SRCROOT)/Metadata/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nikolakirev.OnboardKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -413,7 +413,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "$(SRCROOT)/Metadata/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nikolakirev.OnboardKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";

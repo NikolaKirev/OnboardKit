@@ -19,6 +19,12 @@ final public class OnboardViewController: UIViewController {
     fatalError("init(coder:) has not been implemented")
   }
 
+  /// Initializes a new `OnboardViewController` to be presented
+  /// The onboard view controller encapsulates the whole onboarding flow
+  ///
+  /// - Parameters:
+  ///   - pageItems: An array of `OnboardPage` items
+  ///   - appearanceConfiguration: An optional configuration struct for appearance customization
   public init(pageItems: [OnboardPage],
               appearanceConfiguration: AppearanceConfiguration = AppearanceConfiguration()) {
     self.pageItems = pageItems
@@ -31,7 +37,7 @@ final public class OnboardViewController: UIViewController {
   }
 
   override public func loadView() {
-    super.loadView()
+    view = UIView(frame: CGRect.zero)
     view.backgroundColor = appearanceConfiguration.backgroundColor
     pageViewController.setViewControllers([pageViwControllerFor(pageIndex: 0)!],
                                           direction: .forward,
@@ -74,6 +80,10 @@ final public class OnboardViewController: UIViewController {
 public extension OnboardViewController {
 
   /// Presents the configured `OnboardViewController`
+  ///
+  /// - Parameters:
+  ///   - viewController: the presenting view controller
+  ///   - animated: Defines if the presentation should be animated
   public func presentFrom(_ viewController: UIViewController, animated: Bool) {
     viewController.present(self, animated: animated)
   }
@@ -136,13 +146,19 @@ extension OnboardViewController: OnboardPageViewControllerDelegate {
 
 // MARK: - AppearanceConfiguration
 public extension OnboardViewController {
+
   struct AppearanceConfiguration {
     /// The color used for the page indicator and buttons
     ///
     /// - note: Defualts to the blue tint color used troughout iOS
     let tintColor: UIColor
 
-    /// The color used for the title and description text
+    /// The color used for the title text
+    ///
+    /// - note: If not specified, defualts to whatever `textColor` is
+    let titleColor: UIColor
+
+    /// The color used for the description text (and title text `titleColor` if not set)
     ///
     /// - note: Defualts to `.darkText`
     let textColor: UIColor
@@ -163,11 +179,13 @@ public extension OnboardViewController {
     let textFont: UIFont
 
     public init(tintColor: UIColor = UIColor(red: 0.0, green: 122.0/255.0, blue: 1.0, alpha: 1.0),
+                titleColor: UIColor? = nil,
                 textColor: UIColor = .darkText,
                 backgroundColor: UIColor = .white,
                 titleFont: UIFont = UIFont.preferredFont(forTextStyle: .title1),
                 textFont: UIFont = UIFont.preferredFont(forTextStyle: .body)) {
       self.tintColor = tintColor
+      self.titleColor = titleColor ?? textColor
       self.textColor = textColor
       self.backgroundColor = backgroundColor
       self.titleFont = titleFont

@@ -1,11 +1,13 @@
 ![OnboardKit](Assets/banner.png)
 
-# OnboardKit
-[![Swift 4.0](https://img.shields.io/badge/Swift-4.2-orange.svg?style=flat)](https://developer.apple.com/swift/)
+[![Swift 4.2](https://img.shields.io/badge/Swift-4.2-orange.svg?style=flat)](https://developer.apple.com/swift/)
+[![Version](https://img.shields.io/cocoapods/v/OnboardKit.svg?style=flat)](http://cocoapods.org/pods/OnboardKit)
+[![License](https://img.shields.io/cocoapods/l/OnboardKit.svg?style=flat)](http://cocoapods.org/pods/OnboardKit)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Twitter](https://img.shields.io/badge/twitter-@NikolaKirev-blue.svg?style=flat)](https://twitter.com/NikolaKirev)
 
-*Customisable user onboarding for your iOS app in Swift*
+# OnboardKit
+*Customisable user onboarding for your UIKit app in Swift*
 
 <p align="center"><img src="https://media.giphy.com/media/3ohjV8gDG3kE5dbWSI/giphy.gif" /></p>
 
@@ -13,7 +15,7 @@
 
 * Swift 4.2
 * Xcode 10
-* iOS 10.0+
+* iOS 11.0+
 
 ## Installation
 
@@ -53,25 +55,29 @@ let onboardingViewController = OnboardViewController(pageItems: [pageOne, ...]])
 ````swift
 onboardingVC.presentFrom(self, animated: true)
 ````
-(use this convenience method to make sure you predent it modally)
+(use this convenience method to make sure you present it modally)
 
 ## Customizatioon
 
+![Custom examples](Assets/custom_examples.png)
+
 You can customize the look of your onboarding by changing the default colors.
 ````swift
-AppearanceConfiguration(tintColor: .green,
+AppearanceConfiguration(tintColor: .orange,
+                        titleColor: .red,
                         textColor: .white,
                         backgroundColor: .black,
-                        titleFont: UIFont.boldSystemFont(ofSize: 24),
-                        textFont: UIFont.boldSystemFont(ofSize: 13))
+                        titleFont: UIFont.boldSystemFont(ofSize: 32.0),
+                        textFont: UIFont.boldSystemFont(ofSize: 17.0))
 ````
 
 ## Author
 
-[Nikola Kirev](http://nikolakirev.com)
+### Nikola Kirev
 
-[@NikolaKirev](http://twitter.com/nikolakirev)
+* Website: [http://nikolakirev.com](http://nikolakirev.com)
+* Twitter: [@NikolaKirev](http://twitter.com/nikolakirev)
 
 ## License
 
-OnboardKit is available under the MIT license. See the LICENSE file for more info.
+OnboardKit is available under the MIT license. See the [LICENSE](https://github.com/NikolaKirev/OnboardKit/blob/master/LICENSE) file for more info.
