@@ -7,7 +7,7 @@
 [![Twitter](https://img.shields.io/badge/twitter-@NikolaKirev-blue.svg?style=flat)](https://twitter.com/NikolaKirev)
 
 # OnboardKit
-*Customisable user onboarding for your UIKit app in Swift*
+*Customizable user onboarding for your UIKit app in Swift*
 
 <p align="center"><img src="https://media.giphy.com/media/3ohjV8gDG3kE5dbWSI/giphy.gif" /></p>
 
@@ -57,7 +57,7 @@ onboardingVC.presentFrom(self, animated: true)
 ````
 (use this convenience method to make sure you present it modally)
 
-## Customizatioon
+## Customization
 
 ![Custom examples](Assets/custom_examples.png)
 
