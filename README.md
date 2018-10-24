@@ -37,7 +37,7 @@ pod 'OnboardKit'
 pod 'OnboardKit', :git => 'https://github.com/NikolaKirev/OnboardKit.git', :branch => 'master'
 ````
 
-Don't forget to `import OnboardKit` in the file if you intend to use it.
+Don't forget to `import OnboardKit` in the file you intend to use it.
 
 ## Usage
 
