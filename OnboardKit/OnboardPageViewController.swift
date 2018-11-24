@@ -44,7 +44,7 @@ internal final class OnboardPageViewController: UIViewController {
   private lazy var imageView: UIImageView = {
     let imageView = UIImageView()
     imageView.translatesAutoresizingMaskIntoConstraints = false
-    imageView.contentMode = .center
+    imageView.contentMode = .scaleAspectFit
     return imageView
   }()
 
