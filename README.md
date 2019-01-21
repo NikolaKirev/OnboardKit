@@ -61,14 +61,38 @@ onboardingVC.presentFrom(self, animated: true)
 
 ![Custom examples](Assets/custom_examples.png)
 
-You can customize the look of your onboarding by changing the default colors.
+#### Customizing Fonts and Colors
+You can customize the look of your onboarding by changing the default colors and fonts.
+
+1. Initialize an `AppearanceConfiguration` instance with the desired custom style properties
 ````swift
-AppearanceConfiguration(tintColor: .orange,
-                        titleColor: .red,
-                        textColor: .white,
-                        backgroundColor: .black,
-                        titleFont: UIFont.boldSystemFont(ofSize: 32.0),
-                        textFont: UIFont.boldSystemFont(ofSize: 17.0))
+let appearance = AppearanceConfiguration(tintColor: .orange,
+                                         titleColor: .red,
+                                         textColor: .white,
+                                         backgroundColor: .black,
+                                         titleFont: UIFont.boldSystemFont(ofSize: 32.0),
+                                         textFont: UIFont.boldSystemFont(ofSize: 17.0))
+````
+2. Pass the `AppearanceConfiguration` instance as a parameter when initialising an `OnboardViewController`
+````swift
+let onboardingVC = OnboardViewController(pageItems: onboardingPages,
+                                         appearanceConfiguration: appearance)
+````
+
+#### Customizing Buttons
+To customize the style of the advance and action buttons on each page of the onboarding flow, you can use a `ButtonStyling` closure.
+
+1. Create the closure
+````swift
+let advanceButtonStyling: OnboardViewController.ButtonStyling = { button in
+    button.setTitleColor(UIColor.lightGray, for: .normal)
+    button.titleLabel?.font = UIFont.systemFont(ofSize: 16.0, weight: .semibold)
+}
+````
+2. Pass the closure in the `AppearanceConfiguration` initializer
+````swift
+let appearance = OnboardViewController.AppearanceConfiguration(tintColor: .orange,
+                                                               advanceButtonStyling: advanceButtonStyling)
 ````
 
 ## Author
