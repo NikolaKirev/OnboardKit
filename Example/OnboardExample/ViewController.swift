@@ -91,6 +91,30 @@ class ViewController: UIViewController {
     onboardingVC.presentFrom(self, animated: true)
   }
 
+  @IBAction func showOnboardingStyledButtonsTapped(_ sender: Any) {
+    let advanceButtonStyling: OnboardViewController.ButtonStyling = { button in
+      button.setTitleColor(UIColor.lightGray, for: .normal)
+      button.titleLabel?.font = UIFont.systemFont(ofSize: 16.0, weight: .semibold)
+    }
+    let actionButtonStyling: OnboardViewController.ButtonStyling = { button in
+      button.setTitleColor(.black, for: .normal)
+      button.titleLabel?.font = UIFont.systemFont(ofSize: 22.0, weight: .semibold)
+      button.backgroundColor = UIColor(white: 0.95, alpha: 1.0)
+      button.layer.cornerRadius = button.bounds.height / 2.0
+      button.contentEdgeInsets = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
+      button.layer.shadowColor = UIColor.black.cgColor
+      button.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
+      button.layer.shadowRadius = 2.0
+      button.layer.shadowOpacity = 0.2
+    }
+    let appearance = OnboardViewController.AppearanceConfiguration(advanceButtonStyling: advanceButtonStyling,
+                                                                    actionButtonStyling: actionButtonStyling)
+    let onboardingVC = OnboardViewController(pageItems: onboardingPages,
+                                             appearanceConfiguration: appearance)
+    onboardingVC.modalPresentationStyle = .formSheet
+    onboardingVC.presentFrom(self, animated: true)
+  }
+
   /// Only for the purpouses of the example.
   /// Not really asking for notifications permissions.
   private func showAlert(_ completion: @escaping (_ success: Bool, _ error: Error?) -> Void) {

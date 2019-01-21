@@ -75,8 +75,11 @@ internal final class OnboardPageViewController: UIViewController {
 
   weak var delegate: OnboardPageViewControllerDelegate?
 
+  private let appearanceConfiguration: OnboardViewController.AppearanceConfiguration
+
   init(pageIndex: Int, appearanceConfiguration: OnboardViewController.AppearanceConfiguration) {
     self.pageIndex = pageIndex
+    self.appearanceConfiguration = appearanceConfiguration
     super.init(nibName: nil, bundle: nil)
     customizeStyleWith(appearanceConfiguration)
   }
@@ -93,11 +96,23 @@ internal final class OnboardPageViewController: UIViewController {
     // Style description
     descriptionLabel.textColor = appearanceConfiguration.textColor
     descriptionLabel.font = appearanceConfiguration.textFont
-    // Style buttons
-    actionButton.setTitleColor(appearanceConfiguration.tintColor, for: .normal)
-    actionButton.titleLabel?.font = appearanceConfiguration.titleFont
-    advanceButton.setTitleColor(appearanceConfiguration.tintColor, for: .normal)
-    advanceButton.titleLabel?.font = appearanceConfiguration.textFont
+  }
+
+  private func customizeButtonsWith(_ appearanceConfiguration: OnboardViewController.AppearanceConfiguration) {
+    advanceButton.sizeToFit()
+    if let advanceButtonStyling = appearanceConfiguration.advanceButtonStyling {
+      advanceButtonStyling(advanceButton)
+    } else {
+      advanceButton.setTitleColor(appearanceConfiguration.tintColor, for: .normal)
+      advanceButton.titleLabel?.font = appearanceConfiguration.textFont
+    }
+    actionButton.sizeToFit()
+    if let actionButtonStyling = appearanceConfiguration.actionButtonStyling {
+      actionButtonStyling(actionButton)
+    } else {
+      actionButton.setTitleColor(appearanceConfiguration.tintColor, for: .normal)
+      actionButton.titleLabel?.font = appearanceConfiguration.titleFont
+    }
   }
 
   override func loadView() {
@@ -123,6 +138,12 @@ internal final class OnboardPageViewController: UIViewController {
     advanceButton.addTarget(self,
                             action: #selector(OnboardPageViewController.advanceTapped),
                             for: .touchUpInside)
+
+  }
+
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    customizeButtonsWith(appearanceConfiguration)
   }
 
   func configureWithPage(_ page: OnboardPage) {
