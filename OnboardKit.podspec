@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "OnboardKit"
-  s.version      = "1.2.0"
+  s.version      = "1.3.0"
   s.summary      = "Customisable user onboarding for your iOS app"
 
   s.description  = <<-DESC
@@ -16,9 +16,9 @@ Pod::Spec.new do |s|
   s.author             = { "Nikola Kirev" => "n@nikolakirev.com" }
   s.social_media_url   = "http://twitter.com/NikolaKirev"
 
-  s.platform     = :ios, "12.0"
+  s.platform     = :ios, "11.0"
 
-  s.source       = { :git => "https://github.com/NikolaKirev/OnboardKit.git", :tag => "v1.2.0" }
+  s.source       = { :git => "https://github.com/NikolaKirev/OnboardKit.git", :tag => "v1.3.0" }
   s.source_files  = "OnboardKit"
 
 end
