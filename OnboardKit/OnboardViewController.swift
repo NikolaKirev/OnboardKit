@@ -147,6 +147,8 @@ extension OnboardViewController: OnboardPageViewControllerDelegate {
 // MARK: - AppearanceConfiguration
 public extension OnboardViewController {
 
+  typealias ButtonStyling = ((UIButton) -> Void)
+
   struct AppearanceConfiguration {
     /// The color used for the page indicator and buttons
     ///
@@ -178,18 +180,32 @@ public extension OnboardViewController {
     /// - note: Defualts to preferred text style `.body` (supports dinamyc type)
     let textFont: UIFont
 
+    /// A Swift closure used to expose and customize the button used to advance to the next page
+    ///
+    /// - note: Defualts to nil. If not used, the button will be customized based on the tint and text properties
+    let advanceButtonStyling: ButtonStyling?
+
+    /// A Swift closure used to expose and customize the button used to trigger page specific action
+    ///
+    /// - note: Defualts to nil. If not used, the button will be customized based on the title properties
+    let actionButtonStyling: ButtonStyling?
+
     public init(tintColor: UIColor = UIColor(red: 0.0, green: 122.0/255.0, blue: 1.0, alpha: 1.0),
                 titleColor: UIColor? = nil,
                 textColor: UIColor = .darkText,
                 backgroundColor: UIColor = .white,
                 titleFont: UIFont = UIFont.preferredFont(forTextStyle: .title1),
-                textFont: UIFont = UIFont.preferredFont(forTextStyle: .body)) {
+                textFont: UIFont = UIFont.preferredFont(forTextStyle: .body),
+                advanceButtonStyling: ButtonStyling? = nil,
+                actionButtonStyling: ButtonStyling? = nil) {
       self.tintColor = tintColor
       self.titleColor = titleColor ?? textColor
       self.textColor = textColor
       self.backgroundColor = backgroundColor
       self.titleFont = titleFont
       self.textFont = textFont
+      self.advanceButtonStyling = advanceButtonStyling
+      self.actionButtonStyling = actionButtonStyling
     }
   }
 }
