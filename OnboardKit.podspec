@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "11.0"
 
-  s.source       = { :git => "https://github.com/NikolaKirev/OnboardKit.git", :tag => "v1.3.0" }
+  s.source       = { :git => "https://github.com/NikolaKirev/OnboardKit.git", :tag => "v1.4.1" }
   s.source_files  = "OnboardKit"
 
 end
