@@ -70,6 +70,7 @@ let appearance = AppearanceConfiguration(tintColor: .orange,
                                          titleColor: .red,
                                          textColor: .white,
                                          backgroundColor: .black,
+                                         imageContentMode: .scaleAspectFit,
                                          titleFont: UIFont.boldSystemFont(ofSize: 32.0),
                                          textFont: UIFont.boldSystemFont(ofSize: 17.0))
 ````
@@ -78,6 +79,17 @@ let appearance = AppearanceConfiguration(tintColor: .orange,
 let onboardingVC = OnboardViewController(pageItems: onboardingPages,
                                          appearanceConfiguration: appearance)
 ````
+
+##### List of customizable properties:
+- `tintColor` - used for tinting the advance and action buttons
+- `titleColor` - used to set title color (textColor is used if not specified)
+- `textColor` - used to set description text color
+- `backgroundColor` - used to set view background color
+- `imageContentMode` - used to set the content mode of page imageViews
+- `titleFont` - used to set the title font (used for the action button font as well) 
+- `textFont` - used to set the description text font (used for the advance button font as well)
+- `advanceButtonStyling` - a block used to customize the advance button
+- `actionButtonStyling` - a block used to customize the action button
 
 #### Customizing Buttons
 To customize the style of the advance and action buttons on each page of the onboarding flow, you can use a `ButtonStyling` closure.
