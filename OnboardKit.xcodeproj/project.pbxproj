@@ -174,7 +174,7 @@
 					9437E2AD1F238E7E00E294BE = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 5Z8M29P3V9;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -439,8 +439,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.nikolakirev.OnboardKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -455,8 +454,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.nikolakirev.OnboardKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
