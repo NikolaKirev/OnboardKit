@@ -84,7 +84,7 @@ public extension OnboardViewController {
   /// - Parameters:
   ///   - viewController: the presenting view controller
   ///   - animated: Defines if the presentation should be animated
-  public func presentFrom(_ viewController: UIViewController, animated: Bool) {
+  func presentFrom(_ viewController: UIViewController, animated: Bool) {
     viewController.present(self, animated: animated)
   }
 }
