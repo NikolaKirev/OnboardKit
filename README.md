@@ -1,6 +1,6 @@
 ![OnboardKit](Assets/banner.png)
 
-[![Swift 4.2](https://img.shields.io/badge/Swift-4.2-orange.svg?style=flat)](https://developer.apple.com/swift/)
+[![Swift 5.0](https://img.shields.io/badge/Swift-5.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
 [![Version](https://img.shields.io/cocoapods/v/OnboardKit.svg?style=flat)](http://cocoapods.org/pods/OnboardKit)
 [![License](https://img.shields.io/cocoapods/l/OnboardKit.svg?style=flat)](http://cocoapods.org/pods/OnboardKit)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
@@ -13,7 +13,7 @@
 
 ## Requirements
 
-* Swift 4.2
+* Swift 5.0
 * Xcode 10
 * iOS 11.0+
 
@@ -70,6 +70,7 @@ let appearance = AppearanceConfiguration(tintColor: .orange,
                                          titleColor: .red,
                                          textColor: .white,
                                          backgroundColor: .black,
+                                         imageContentMode: .scaleAspectFit,
                                          titleFont: UIFont.boldSystemFont(ofSize: 32.0),
                                          textFont: UIFont.boldSystemFont(ofSize: 17.0))
 ````
@@ -78,6 +79,17 @@ let appearance = AppearanceConfiguration(tintColor: .orange,
 let onboardingVC = OnboardViewController(pageItems: onboardingPages,
                                          appearanceConfiguration: appearance)
 ````
+
+##### List of customizable properties:
+- `tintColor` - used for tinting the advance and action buttons
+- `titleColor` - used to set title color (textColor is used if not specified)
+- `textColor` - used to set description text color
+- `backgroundColor` - used to set view background color
+- `imageContentMode` - used to set the content mode of page imageViews
+- `titleFont` - used to set the title font (used for the action button font as well) 
+- `textFont` - used to set the description text font (used for the advance button font as well)
+- `advanceButtonStyling` - a block used to customize the advance button
+- `actionButtonStyling` - a block used to customize the action button
 
 #### Customizing Buttons
 To customize the style of the advance and action buttons on each page of the onboarding flow, you can use a `ButtonStyling` closure.

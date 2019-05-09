@@ -44,7 +44,6 @@ internal final class OnboardPageViewController: UIViewController {
   private lazy var imageView: UIImageView = {
     let imageView = UIImageView()
     imageView.translatesAutoresizingMaskIntoConstraints = false
-    imageView.contentMode = .center
     return imageView
   }()
 
@@ -90,6 +89,8 @@ internal final class OnboardPageViewController: UIViewController {
 
   private func customizeStyleWith(_ appearanceConfiguration: OnboardViewController.AppearanceConfiguration) {
     view.backgroundColor = appearanceConfiguration.backgroundColor
+    // Setup imageView
+    imageView.contentMode = appearanceConfiguration.imageContentMode
     // Style title
     titleLabel.textColor = appearanceConfiguration.titleColor
     titleLabel.font = appearanceConfiguration.titleFont

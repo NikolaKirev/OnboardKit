@@ -84,7 +84,7 @@ public extension OnboardViewController {
   /// - Parameters:
   ///   - viewController: the presenting view controller
   ///   - animated: Defines if the presentation should be animated
-  public func presentFrom(_ viewController: UIViewController, animated: Bool) {
+  func presentFrom(_ viewController: UIViewController, animated: Bool) {
     viewController.present(self, animated: animated)
   }
 }
@@ -170,6 +170,11 @@ public extension OnboardViewController {
     /// - note: Defualts to white
     let backgroundColor: UIColor
 
+    /// The `contentMode` used for the slide imageView
+    ///
+    /// - note: Defualts to white
+    let imageContentMode: UIView.ContentMode
+
     /// The font used for the title and action button
     ///
     /// - note: Defualts to preferred text style `.title1` (supports dinamyc type)
@@ -194,6 +199,7 @@ public extension OnboardViewController {
                 titleColor: UIColor? = nil,
                 textColor: UIColor = .darkText,
                 backgroundColor: UIColor = .white,
+                imageContentMode: UIView.ContentMode = .center,
                 titleFont: UIFont = UIFont.preferredFont(forTextStyle: .title1),
                 textFont: UIFont = UIFont.preferredFont(forTextStyle: .body),
                 advanceButtonStyling: ButtonStyling? = nil,
@@ -202,6 +208,7 @@ public extension OnboardViewController {
       self.titleColor = titleColor ?? textColor
       self.textColor = textColor
       self.backgroundColor = backgroundColor
+      self.imageContentMode = imageContentMode
       self.titleFont = titleFont
       self.textFont = textFont
       self.advanceButtonStyling = advanceButtonStyling
