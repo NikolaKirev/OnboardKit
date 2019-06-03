@@ -14,6 +14,7 @@ final public class OnboardViewController: UIViewController {
                                                             options: nil)
   private let pageItems: [OnboardPage]
   private let appearanceConfiguration: AppearanceConfiguration
+  private let completion: (() -> Void)?
 
   required public init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
@@ -26,9 +27,10 @@ final public class OnboardViewController: UIViewController {
   ///   - pageItems: An array of `OnboardPage` items
   ///   - appearanceConfiguration: An optional configuration struct for appearance customization
   public init(pageItems: [OnboardPage],
-              appearanceConfiguration: AppearanceConfiguration = AppearanceConfiguration()) {
+              appearanceConfiguration: AppearanceConfiguration = AppearanceConfiguration(), completion: (() -> Void)? = nil) {
     self.pageItems = pageItems
     self.appearanceConfiguration = appearanceConfiguration
+    self.completion = completion
     super.init(nibName: nil, bundle: nil)
   }
 
@@ -137,7 +139,7 @@ extension OnboardViewController: OnboardPageViewControllerDelegate {
 
   func pageViewController(_ pageVC: OnboardPageViewController, advanceTappedAt index: Int) {
     if index == pageItems.count - 1 {
-      dismiss(animated: true, completion: nil)
+      dismiss(animated: true, completion: self.completion)
     } else {
       advanceToPageWithIndex(index + 1)
     }
