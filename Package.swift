@@ -3,6 +3,7 @@ import PackageDescription
 
 let package = Package(
     name: "OnboardKit",
+    platforms: [.iOS(.v11)],
     products: [
         .library(name: "OnboardKit",  targets: ["OnboardKit"])
     ],
