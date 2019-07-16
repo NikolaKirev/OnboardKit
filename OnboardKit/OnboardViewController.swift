@@ -5,10 +5,17 @@
 
 import UIKit
 
+public enum OnboardActionType {
+    case onboardingComplete
+}
+
+public protocol OnboardingDelegate: class {
+    func onboardViewController(_ controller: OnboardViewController, didPerform action: OnboardActionType)
+}
 /**
  */
 final public class OnboardViewController: UIViewController {
-
+  public weak var delegate: OnboardingDelegate?
   private let pageViewController = UIPageViewController(transitionStyle: .scroll,
                                                             navigationOrientation: .horizontal,
                                                             options: nil)
@@ -137,7 +144,11 @@ extension OnboardViewController: OnboardPageViewControllerDelegate {
 
   func pageViewController(_ pageVC: OnboardPageViewController, advanceTappedAt index: Int) {
     if index == pageItems.count - 1 {
-      dismiss(animated: true, completion: nil)
+      if let delegate = self.delegate {
+            delegate.onboardViewController(self, didPerform: .onboardingComplete)
+        } else {
+            dismiss(animated: true, completion: nil)
+        }
     } else {
       advanceToPageWithIndex(index + 1)
     }
