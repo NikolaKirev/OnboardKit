@@ -69,7 +69,9 @@ class ViewController: UIViewController {
   }()
 
   @IBAction func showOnboardingDefaultTapped(_ sender: Any) {
-    let onboardingVC = OnboardViewController(pageItems: onboardingPages)
+    let onboardingVC = OnboardViewController(pageItems: onboardingPages, completion: {
+        print("onboarding complete")
+    })
     onboardingVC.modalPresentationStyle = .formSheet
     onboardingVC.presentFrom(self, animated: true)
   }
