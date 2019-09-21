@@ -26,8 +26,10 @@ final public class OnboardViewController: UIViewController {
   /// - Parameters:
   ///   - pageItems: An array of `OnboardPage` items
   ///   - appearanceConfiguration: An optional configuration struct for appearance customization
+  ///   - completion: An optional completion block that gets executed when the onboarding VC is dismissed
   public init(pageItems: [OnboardPage],
-              appearanceConfiguration: AppearanceConfiguration = AppearanceConfiguration(), completion: (() -> Void)? = nil) {
+              appearanceConfiguration: AppearanceConfiguration = AppearanceConfiguration(),
+              completion: (() -> Void)? = nil) {
     self.pageItems = pageItems
     self.appearanceConfiguration = appearanceConfiguration
     self.completion = completion
