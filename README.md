@@ -49,7 +49,7 @@ let page = OnboardPage(title: "Welcome to OnboardKit",
 ````
 2. Create an `OnboardViewController`
 ````swift
-let onboardingViewController = OnboardViewController(pageItems: [pageOne, ...]])
+let onboardingViewController = OnboardViewController(pageItems: [pageOne, ...])
 ````
 3. Present the view controller
 ````swift
