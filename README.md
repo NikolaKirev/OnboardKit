@@ -53,7 +53,7 @@ let onboardingViewController = OnboardViewController(pageItems: [pageOne, ...])
 ````
 3. Present the view controller
 ````swift
-onboardingVC.presentFrom(self, animated: true)
+onboardingViewController.presentFrom(self, animated: true)
 ````
 (use this convenience method to make sure you present it modally)
 
