@@ -37,6 +37,7 @@ internal final class OnboardPageViewController: UIViewController {
     let label = UILabel()
     label.translatesAutoresizingMaskIntoConstraints = false
     label.font = UIFont.preferredFont(forTextStyle: .title1)
+    label.numberOfLines = 0
     label.textAlignment = .center
     return label
   }()
