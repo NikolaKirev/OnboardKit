@@ -14,6 +14,7 @@ final public class OnboardViewController: UIViewController {
                                                             options: nil)
   private let pageItems: [OnboardPage]
   private let appearanceConfiguration: AppearanceConfiguration
+  private let behaviorConfiguration: BehaviorConfiguration
   private let completion: (() -> Void)?
 
   required public init?(coder: NSCoder) {
@@ -26,12 +27,15 @@ final public class OnboardViewController: UIViewController {
   /// - Parameters:
   ///   - pageItems: An array of `OnboardPage` items
   ///   - appearanceConfiguration: An optional configuration struct for appearance customization
+  ///   - behaviorConfiguration: An optional configuration struct for changing the default behavior
   ///   - completion: An optional completion block that gets executed when the onboarding VC is dismissed
   public init(pageItems: [OnboardPage],
               appearanceConfiguration: AppearanceConfiguration = AppearanceConfiguration(),
+              behaviorConfiguration: BehaviorConfiguration = BehaviorConfiguration(),
               completion: (() -> Void)? = nil) {
     self.pageItems = pageItems
     self.appearanceConfiguration = appearanceConfiguration
+    self.behaviorConfiguration = behaviorConfiguration
     self.completion = completion
     super.init(nibName: nil, bundle: nil)
   }
@@ -47,7 +51,9 @@ final public class OnboardViewController: UIViewController {
                                           direction: .forward,
                                           animated: false,
                                           completion: nil)
-    pageViewController.dataSource = self
+    if behaviorConfiguration.isSwipeAllowed {
+      pageViewController.dataSource = self
+    }
     pageViewController.delegate = self
     pageViewController.view.frame = view.bounds
 
@@ -147,6 +153,22 @@ extension OnboardViewController: OnboardPageViewControllerDelegate {
     }
   }
 }
+
+// MARK: - BehaviorConfiguration
+public extension OnboardViewController {
+
+  struct BehaviorConfiguration {
+    /// Indicates if swiping navigation is allowed. Defaults to True
+    ///
+    /// - note: If disabled, this will prevent users from moving backwards through the pages
+    let isSwipeAllowed: Bool
+
+    public init(isSwipeAllowed: Bool = true) {
+      self.isSwipeAllowed = isSwipeAllowed
+    }
+  }
+}
+
 
 // MARK: - AppearanceConfiguration
 public extension OnboardViewController {
