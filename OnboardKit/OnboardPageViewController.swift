@@ -37,6 +37,7 @@ internal final class OnboardPageViewController: UIViewController {
     let label = UILabel()
     label.translatesAutoresizingMaskIntoConstraints = false
     label.font = UIFont.preferredFont(forTextStyle: .title1)
+    label.numberOfLines = 0
     label.textAlignment = .center
     return label
   }()
@@ -157,6 +158,9 @@ internal final class OnboardPageViewController: UIViewController {
 
   private func configureTitleLabel(_ title: String) {
     titleLabel.text = title
+    NSLayoutConstraint.activate([
+      titleLabel.widthAnchor.constraint(equalTo: pageStackView.widthAnchor, multiplier: 0.8)
+      ])
   }
 
   private func configureImageView(_ imageName: String?) {
